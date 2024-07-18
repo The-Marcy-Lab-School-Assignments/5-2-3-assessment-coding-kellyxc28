@@ -34,6 +34,14 @@ class ToDoList {
   getCompletedCount(){
     return this.#items.reduce((accum, {isDone}) => accum + isDone, 0);
   }
+
+  static list() {
+    return [...ToDoList.#allLists];
+  }
+
+  findBy(){
+
+  }
 }
 
 module.exports = {

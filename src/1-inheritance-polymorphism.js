@@ -6,8 +6,11 @@ class Phone {
   }
 
   addContact(newContact) {
-    if (newContact.name === undefined && newContact.phoneNumber === undefined || newContact.phoneNumber.length !== 10) {
+    if (newContact.name === undefined || newContact.phoneNumber === undefined) {
       return 'Invalid';
+    }
+    else if (newContact.phoneNumber.length !== 10) {
+      return 'Invalid';  
     }
     else {
       this.contacts.push(newContact);

@@ -24,19 +24,23 @@ class Phone {
     if (removingThisIdx !== -1) { // if exists 
       this.contacts.splice(removingThisIdx, 1);
       return `${targetContact} removed.`;
-    } else {
+    } 
+    else {
       return 'Contact not found.';
     }
   }
 
-  makeCall(callingPerson) {
-    const callingThisIdx = this.contacts.indexOf(callingPerson);
+  makeCall(input) {
+    // input can be a person's name or a number
+    const callingThisIdx = this.contacts.findIndex((person) => person.name === input, 1);
     
     if (callingThisIdx !== -1) { // if exists 
-      return `Calling ${this.name}...`;
-    } else {
-      if (typeof this.phoneNumber === isNaN && this.phoneNumber.length === 10) {
-        return `Calling ${this.phoneNumber}...`;
+      return `Calling ${input}...`;
+    } 
+    else {
+      
+      if (input.length === 10) {
+        return `Calling ${input}...`;
       }
     }
 

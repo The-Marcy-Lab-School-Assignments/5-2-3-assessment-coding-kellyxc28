@@ -1,13 +1,15 @@
-const bankAccountFactory = () => {
+const bankAccountFactory = (amount = 0) => {
   const bankAccount = {
     checkBalance() {
-      
+      return amount;
     },
-    add () {
-
+    add (addingAmt) {
+      amount += addingAmt;
+      console.log(`$${addingAmt} added.`)
     },
-    subtract() {
-
+    subtract(subtractingAmt) {
+      amount -= subtractingAmt;
+      console.log(`$${subtractingAmt} subtracted.`)
     }
   }
 

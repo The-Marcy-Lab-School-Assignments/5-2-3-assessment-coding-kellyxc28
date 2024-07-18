@@ -49,22 +49,25 @@ class Phone {
 }
 
 class AppleIPhone extends Phone {
-  constructor(phoneNumber, model, message) {
+  constructor(phoneNumber, model) {
     super(phoneNumber);
     this.model = model;
-    this.message = message;
   }
 
-  sendIMessage() {
-    // if knockoff or Android => model is not iPhone 
-    // but we are told to not check the model?? 
-    if (this.model !== 'iPhone') {
-      return `Message: ${this.message} - sent from ${this.model}`;
+  sendIMessage(phoneNum, phoneMsg) {
+    /*
+     Types of phones and the available values: 
+      - IPhone => number, model 
+      - Android => number 
+      - Knockoff = number, misspelled model 
+     */
+    
+    if (!(phoneNum instanceof AppleIPhone)) {
+      return `Message could not be sent.`;
     }
     else {
-      return `Message: ${this.message} - sent from ${this.model}`;
+      return `Message: ${phoneMsg} - sent from ${this.model}`;
     }
-    
   }
 }
 

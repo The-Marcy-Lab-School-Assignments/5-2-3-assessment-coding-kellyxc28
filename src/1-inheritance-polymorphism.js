@@ -19,11 +19,11 @@ class Phone {
   }
 
   removeContact(targetContact) {
-    const removingThisIdx = this.contacts.indexOf(targetContact);
+    const removingThisIdx = this.contacts.findIndex((person) => person.name === targetContact, 1);
     
     if (removingThisIdx !== -1) { // if exists 
       this.contacts.splice(removingThisIdx, 1);
-      return `${this.name} removed.`;
+      return `${targetContact} removed.`;
     } else {
       return 'Contact not found.';
     }

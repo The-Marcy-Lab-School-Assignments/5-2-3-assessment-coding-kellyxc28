@@ -28,8 +28,18 @@ class Phone {
     }
   }
 
-  makeCall() {
-
+  makeCall(callingPerson) {
+    const callingThisIdx = this.contacts.indexOf(callingPerson);
+    
+    if (callingThisIdx !== -1) { // if exists 
+      return `Calling ${this.name}...`;
+    } else {
+      if (typeof this.phoneNumber === isNaN && this.phoneNumber.length === 10) {
+        return `Calling ${this.phoneNumber}...`;
+      }
+    }
+    
+    return 'Invalid';
   }
 }
 

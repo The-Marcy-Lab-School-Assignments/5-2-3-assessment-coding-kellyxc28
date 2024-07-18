@@ -6,15 +6,13 @@ class Phone {
   }
 
   addContact(newContact) {
-    //   // if (this.name === undefined || phoneNumber === undefined && phoneNumber.length !== 10) {
-    if (this.name === undefined || this.phoneNumber === undefined) {
+    if (newContact.name === undefined && newContact.phoneNumber === undefined || newContact.phoneNumber.length !== 10) {
       return 'Invalid';
     }
     else {
       this.contacts.push(newContact);
-      return `${this.name} added`;
+      return `${newContact.name} added.`;
     }
-    
   }
 
   removeContact(targetContact) {
@@ -44,16 +42,17 @@ class Phone {
 }
 
 class AppleIPhone extends Phone {
-  constructor(phoneNumber, model) {
+  constructor(phoneNumber, model, message) {
     super(phoneNumber);
     this.model = model;
+    this.message = message;
   }
 
   sendIMessage() {
     // if knockoff or Android => model is not iPhone 
     // but we are told to not check the model?? 
     if (this.model !== 'iPhone') {
-      return 'Message could not be sent.';
+      return `Message: ${this.message} - sent from ${this.model}`;
     }
     else {
       return `Message: ${this.message} - sent from ${this.model}`;

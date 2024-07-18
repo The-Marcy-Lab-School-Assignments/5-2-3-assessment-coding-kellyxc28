@@ -5,18 +5,16 @@ class Phone {
     this.name = name;
   }
 
-  addContact(contact) {
-    // name does not appear til we get to this method 
-    // if (this.name === undefined || phoneNumber === undefined && phoneNumber.length !== 10) {
+  addContact(newContact) {
+    //   // if (this.name === undefined || phoneNumber === undefined && phoneNumber.length !== 10) {
     if (this.name === undefined || this.phoneNumber === undefined) {
       return 'Invalid';
     }
-    else { 
-      // const newContact = new Phone(this.name, this.phoneNumber);
-      // this.contacts.push(newContact);
-      this.contacts.push(contact);
-      return `${this.name} added.`;
+    else {
+      this.contacts.push(newContact);
+      return `${this.name} added`;
     }
+    
   }
 
   removeContact() {

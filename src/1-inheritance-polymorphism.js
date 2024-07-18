@@ -17,7 +17,15 @@ class Phone {
     
   }
 
-  removeContact() {
+  removeContact(targetContact) {
+    const removingThisIdx = this.contacts.indexOf(targetContact);
+    
+    if (removingThisIdx !== -1) { // if exists 
+      this.contacts.splice(removingThisIdx, 1);
+      return `${this.name} removed.`;
+    } else {
+      return 'Contact not found.';
+    }
   }
 
   makeCall() {

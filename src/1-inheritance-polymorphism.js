@@ -5,6 +5,7 @@ class Phone {
     this.name = name;
   }
 
+  // asked for assistance 
   addContact(newContact) {
     if (newContact.name === undefined || newContact.phoneNumber === undefined) {
       return 'Invalid';
@@ -19,6 +20,7 @@ class Phone {
   }
 
   removeContact(targetContact) {
+    // asked for assistance 
     const removingThisIdx = this.contacts.findIndex((person) => person.name === targetContact, 1);
     
     if (removingThisIdx !== -1) { // if exists 
@@ -33,12 +35,19 @@ class Phone {
   makeCall(input) {
     // input can be a person's name or a number
     const callingThisIdx = this.contacts.findIndex((person) => person.name === input, 1);
+
+    // asked for assistance 
+    const callingThisNumIdx = this.contacts.findIndex((person) => person.phoneNumber === input, 1);
     
+    // asked for assistance 
+    if (callingThisNumIdx !== -1) { // if exists 
+      return `Calling ${this.contacts[callingThisNumIdx].name}...`;
+    } 
+
     if (callingThisIdx !== -1) { // if exists 
       return `Calling ${input}...`;
     } 
     else {
-      
       if (input.length === 10) {
         return `Calling ${input}...`;
       }
@@ -55,13 +64,7 @@ class AppleIPhone extends Phone {
   }
 
   sendIMessage(phoneNum, phoneMsg) {
-    /*
-     Types of phones and the available values: 
-      - IPhone => number, model 
-      - Android => number 
-      - Knockoff = number, misspelled model 
-     */
-    
+    // asked for assistance 
     if (!(phoneNum instanceof AppleIPhone)) {
       return `Message could not be sent.`;
     }

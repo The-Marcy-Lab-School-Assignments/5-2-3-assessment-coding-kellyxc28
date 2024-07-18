@@ -39,8 +39,8 @@ class ToDoList {
     return [...ToDoList.#allLists];
   }
 
-  findBy(){
-
+  static findBy(id){
+    return ToDoList.#allLists.find((item) => item.id === id);
   }
 }
 

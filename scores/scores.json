@@ -36,8 +36,8 @@
       "In&PoTe9": 0,
       "In&PoTe10": 0,
       "In&PoTe11": 1,
-      "In&PoTe12": 0,
-      "In&PoTe13": 0,
+      "In&PoTe12": 1,
+      "In&PoTe13": 1,
       "In&PoTe14": 0,
       "In&PoTe15": 0
     }
@@ -118,8 +118,8 @@
   },
   "humanReadable": {
     "Factory Function Tests": "0/5",
-    "finalTestScore": "FINAL SCORE: 21/35",
+    "finalTestScore": "FINAL SCORE: 23/35",
     "Has Many / Belongs To Tests": "15/15",
-    "Inheritance & Polymorphism Tests": "6/15"
+    "Inheritance & Polymorphism Tests": "8/15"
   }
 }

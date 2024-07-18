@@ -38,13 +38,28 @@ class Phone {
         return `Calling ${this.phoneNumber}...`;
       }
     }
-    
+
     return 'Invalid';
   }
 }
 
-class AppleIPhone {
+class AppleIPhone extends Phone {
+  constructor(phoneNumber, model) {
+    super(phoneNumber);
+    this.model = model;
+  }
 
+  sendIMessage() {
+    // if knockoff or Android => model is not iPhone 
+    // but we are told to not check the model?? 
+    if (this.model !== 'iPhone') {
+      return 'Message could not be sent.';
+    }
+    else {
+      return `Message: ${this.message} - sent from ${this.model}`;
+    }
+    
+  }
 }
 
 module.exports = {

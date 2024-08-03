@@ -1,5 +1,5 @@
 const { getId } = require('./utils');
-
+/** FEEDBACK: Great job getting all test cases to pass! */
 class ToDoItem {
   constructor(description, priorityLevel) {
     this.id = getId();
@@ -8,7 +8,7 @@ class ToDoItem {
     this.isDone = false;
     this.hasStarted = false;  // created myself 
   }
-
+  /** FEEDBACK: Amazing! */
   startedToDoTask() {   // created myself 
     return this.hasStarted = true;
   }
@@ -48,7 +48,7 @@ class ToDoList {
   static findBy(id){
     return ToDoList.#allLists.find((item) => item.id === id);
   }
-
+  /** FEEDBACK: Love this! We could have possibly named this isComplete to show that we will be returning a boolean! */
   finishedToDoList() {    // created myself 
     return [...this.#items].length === getCompletedCount();
   }
